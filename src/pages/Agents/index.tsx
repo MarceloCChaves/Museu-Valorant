@@ -26,6 +26,7 @@ export default function Home() {
           return(
               <div key={content.uuid}>
                   <h3>{content.displayName}</h3>
+                  <p>{content.description}</p>
               </div>
           )
       })}
