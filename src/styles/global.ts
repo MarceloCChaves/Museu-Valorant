@@ -2,13 +2,14 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
     :root{
-        --background: #FF4654;
+        --background: linear-gradient(to right, #cb2d3e, #ef473a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+        --card: #FF4654;
         --red: #e52e4d;
         --green: #33cc95;
 
         --blue-light: #6933ff;
 
-        --text-title: #363f5f;
+        --text-title: #ECE8E1;
         --text-body: #969cb3;
 
         --shape: #ffffff;
@@ -34,7 +35,7 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialised;
     }
     body, input, textarea, button{
-        font-family: "Poppins", sans-serif;
+        font-family: 'Lato', sans-serif;
         font-weight: 400;
     }
     h1,h2,h3,h4,h5,h6,strong{

@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { AxiosResponse } from "axios";
+import { Agent } from "../../components/Agent";
+import { Container } from './styles'
 
 type AgentInfo = {
   uuid: string;
   displayName: string;
   description: string;
   bustPortrait: string;
-  role: {
-    displayName: string;
-    displayIcon: string;
-  };
 };
 
 export default function Home() {
@@ -21,15 +19,18 @@ export default function Home() {
     });
   }, []);
   return (
-    <div>
+    <Container>
       {agents.map((content) => {
-          return(
-              <div key={content.uuid}>
-                  <h3>{content.displayName}</h3>
-                  <p>{content.description}</p>
-              </div>
-          )
+        return (
+          <Agent
+            key={content.uuid}
+            displayName={content.displayName}
+            description={content.description}
+            bustPortrait={content.bustPortrait}
+            uuid={content.uuid}
+          />
+        );
       })}
-    </div>
+    </Container>
   );
 }
