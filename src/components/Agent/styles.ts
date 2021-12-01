@@ -10,10 +10,9 @@ export const AgentCard = styled.li`
     width: 25%;
     height: 600px;
     max-width: 100%;
-    border: 1px solid var(--text);
     border-radius: 30px;
 
-    :nth-child(6){
+    :nth-child(7){
         display: none;
     }
 
@@ -39,5 +38,6 @@ export const AgentCard = styled.li`
 
     @media(max-width: 767px){
         width: 100%;
+        margin: 0 0 30px;
     }
 `

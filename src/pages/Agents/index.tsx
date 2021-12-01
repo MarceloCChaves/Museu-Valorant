@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { AxiosResponse } from "axios";
 import { Agent } from "../../components/Agent";
-import { Container } from './styles'
+import { Container } from "./styles";
+import { Navbar } from "../../components/Navbar";
 
 type AgentInfo = {
   uuid: string;
@@ -19,18 +20,21 @@ export default function Home() {
     });
   }, []);
   return (
-    <Container>
-      {agents.map((content) => {
-        return (
-          <Agent
-            key={content.uuid}
-            displayName={content.displayName}
-            description={content.description}
-            bustPortrait={content.bustPortrait}
-            uuid={content.uuid}
-          />
-        );
-      })}
-    </Container>
+    <div>
+      <Navbar/>
+      <Container>
+        {agents.map((content) => {
+          return (
+            <Agent
+              key={content.uuid}
+              displayName={content.displayName}
+              description={content.description}
+              bustPortrait={content.bustPortrait}
+              uuid={content.uuid}
+            />
+          );
+        })}
+      </Container>
+    </div>
   );
 }
