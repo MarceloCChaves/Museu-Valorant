@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Map } from "../../components/Map/index";
 import { Navbar } from "../../components/Navbar";
 import api from "../../services/api";
+import { Container } from "./styles";
 
 type MapInfo = {
   uuid: string;
@@ -22,6 +23,7 @@ export default function Maps() {
   return (
     <div>
       <Navbar />
+    <Container>
       {maps.map((content) => {
         return (
           <Map
@@ -33,6 +35,7 @@ export default function Maps() {
           />
         );
       })}
+    </Container>
     </div>
   );
 }
