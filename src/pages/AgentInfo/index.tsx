@@ -7,13 +7,16 @@ type AgentInfo = {
   uuid: string;
   displayName: string;
   description: string;
-  bustPortrait: string;
+  fullPortraitV2: string;
   displayIcon: string;
   role: {
     displayName: string;
     displayIcon: string;
   };
   abilities: Array<any>;
+  voiceLine: {
+    mediaList: Array<any>;
+  }
 };
 
 export default function Agent() {
@@ -36,15 +39,15 @@ export default function Agent() {
   return (
     <Container key={agent.uuid}>
       <Box>
-        <img src={agent.bustPortrait} alt={agent.displayName} />
+        <img className="character" src={agent.fullPortraitV2} alt={agent.displayName} loading="lazy" />
         <div>
           <div>
-            <img src={agent.displayIcon} alt={agent.displayName} />
+            <img src={agent.displayIcon} alt={agent.displayName} loading="lazy" />
             <strong>{agent.displayName}</strong>
           </div>
           <p>{agent.description}</p>
           <div>
-            <img src={agent.role.displayIcon} alt={agent.displayName} />
+            <img src={agent.role.displayIcon} alt={agent.displayName} loading="lazy" />
             <span>{agent.role.displayName}</span>
           </div>
           <div>
@@ -67,6 +70,9 @@ export default function Agent() {
                 <span>{agent.abilities[3].description}</span>
               </details>
             </div>
+            <audio autoPlay>
+              <source src={agent.voiceLine.mediaList[0].wave} type="audio/wav" />
+            </audio>
           </div>
         </div>
       </Box>

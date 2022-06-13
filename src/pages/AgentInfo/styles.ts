@@ -32,10 +32,14 @@ export const Box = styled.section`
       margin-right: 10px;
     }
 
-    div, p{
+    p {
+      padding: 20px 0 20px 10px;
+    }
+
+    div{
       display: flex;
       align-items: center;
-      margin: 20px 0 20px 30px;
+      padding: 0 0 20px 10px;
 
       .abilities{
         display: flex;
@@ -47,7 +51,13 @@ export const Box = styled.section`
     }
   }
 
-  img {
+  .character {
     height: 300px;
+  }
+
+  @media(max-width: 767px){
+    .character{
+      display: none;
+    }
   }
 `;

@@ -18,8 +18,7 @@ export const Nav = styled.nav`
 
     a {
       color: var(--shape);
-      text-decoration-line: underline;
-      text-underline-offset: 3px;
+      text-decoration: none;
     }
   }
 

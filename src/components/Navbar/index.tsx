@@ -5,13 +5,12 @@ export function Navbar(){
     return(
         <Nav>
             <div className="logo">
-                <strong>Valorant</strong>
-                <p>Created with <a href="https://valorant-api.com/" target="_blank" rel="noreferrer">Valorant-api</a></p>
+                <strong><Link to="/">Valorant</Link></strong>
+                <p>Criado com <a href="https://valorant-api.com/" target="_blank" rel="noreferrer">Valorant-api</a></p>
             </div>
             <ul className="navbar-items">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/agents">Agents</Link></li>
-                <li><Link to="/Maps">Maps</Link></li>
+                <li><Link to="/agents">Agentes</Link></li>
+                <li><Link to="/maps">Mapas</Link></li>
             </ul>
         </Nav>
     )

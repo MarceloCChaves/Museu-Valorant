@@ -11,7 +11,7 @@ type AgentInfo = {
 export function Agent(props: AgentInfo) {
   return (
     <AgentCard>
-        <img src={props.bustPortrait} alt={props.displayName} />
+        <img src={props.bustPortrait} alt={props.displayName} loading="lazy" />
         <strong>{props.displayName}</strong>
         <p>{props.description}</p>
         <Link to={`/agents/${props.uuid}`}>Ver mais informações sobre o agente</Link>
