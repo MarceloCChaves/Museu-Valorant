@@ -2,18 +2,17 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
     :root{
-        --background: linear-gradient(to right, #cb2d3e, #ef473a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
         --card: #FF4654;
         --red: #e52e4d;
+        --blue: #1b77f3;
         --green: #33cc95;
-
-        --blue-light: #6933ff;
-
+        --black: #000000;
         --text-title: #ECE8E1;
         --text-body: #969cb3;
-
+        --medium-grey: #a7a7a7;
+        --deep-grey: #343434;
         --shape: #ffffff;
-        --text: #000000;
+        --whitesmoke: #f9f9f9;
     }
     *{
         margin: 0;
@@ -31,11 +30,11 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        background: var(--background);
+        background: var(--red);
         -webkit-font-smoothing: antialised;
     }
     body, input, textarea, button{
-        font-family: 'Lato', sans-serif;
+        font-family: 'Lexend Deca', sans-serif;
         font-weight: 400;
     }
     h1,h2,h3,h4,h5,h6,strong{
@@ -43,9 +42,5 @@ export const GlobalStyle = createGlobalStyle`
     }
     button{
         cursor: pointer;
-    }
-    [disabled]{
-        opacity: 0.6;
-        cursor: not-allowed;
     }
 `

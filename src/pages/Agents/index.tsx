@@ -12,7 +12,7 @@ type AgentInfo = {
   bustPortrait: string;
 };
 
-export default function Home() {
+export default function Agents() {
   const [agents, setAgents] = useState<AgentInfo[]>([]);
   useEffect(() => {
     api.get("/agents").then((response: AxiosResponse<any>) => {
