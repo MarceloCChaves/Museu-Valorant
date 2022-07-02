@@ -15,6 +15,9 @@ type MapInfo = {
 
 export default function Maps() {
   const [maps, setMaps] = useState<MapInfo[]>([]);
+  const filteredMaps = maps.filter((map) => {
+    return map.displayIcon !== null
+  })
   useEffect(() => {
     api.get("/maps").then((response: AxiosResponse<any>) => {
       setMaps(response.data.data as MapInfo[]);
@@ -24,7 +27,7 @@ export default function Maps() {
     <div>
       <Navbar />
     <Container>
-      {maps.map((content) => {
+      {filteredMaps.map((content) => {
         return (
           <Map
             key={content.uuid}
@@ -35,6 +38,7 @@ export default function Maps() {
           />
         );
       })}
+      {filteredMaps.length <= 0 && <h1 className="loading-maps">Carregando mapas...</h1>}
     </Container>
     </div>
   );

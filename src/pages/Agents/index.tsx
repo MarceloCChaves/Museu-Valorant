@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import api from "../../services/api";
 import { AxiosResponse } from "axios";
 import { Agent } from "../../components/Agent";
@@ -23,17 +23,23 @@ export default function Agents() {
     <div>
       <Navbar/>
       <Container>
-        {agents.map((content) => {
-          return (
-            <Agent
-              key={content.uuid}
-              displayName={content.displayName}
-              description={content.description}
-              bustPortrait={content.bustPortrait}
-              uuid={content.uuid}
-            />
-          );
-        })}
+        {useMemo(() => {
+          return(
+            agents.length > 0 &&
+            agents.map((content) => {
+              return (
+                <Agent
+                  key={content.uuid}
+                  displayName={content.displayName}
+                  description={content.description}
+                  bustPortrait={content.bustPortrait}
+                  uuid={content.uuid}
+                />
+              );
+            })
+          )
+        }, [agents])}
+        {agents.length <= 0 && <h1 className="loading-agents">Carregando agentes</h1>}
       </Container>
     </div>
   );

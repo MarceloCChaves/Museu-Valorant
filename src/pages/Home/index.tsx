@@ -51,8 +51,8 @@ export default function Home() {
         name: displayName,
       });
     }
-    navigate("/agents")
-    console.log(googleUser)
+    navigate("/agents");
+    console.log(googleUser);
   }
 
   function handleFocusUsername({ target }: any) {
@@ -135,15 +135,15 @@ export default function Home() {
           Manter login
         </label>
 
-        <Link to="/agents">
-          <button
-            className="login-button"
-            type="button"
-            disabled={(user && password).length === 0}
-          >
+        <button
+          className="login-button"
+          type="button"
+          disabled={(user && password).length === 0}
+        >
+          <Link to="/agents">
             <FaArrowRight size={20} color={"#fff"} />
-          </button>
-        </Link>
+          </Link>
+        </button>
 
         <button className="create-account-button">
           Não possui conta? Clique para criar uma

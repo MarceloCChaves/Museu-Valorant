@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    margin: 0 auto;
-    width: 90%;
-    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    .loading-maps{
+        color: var(--shape);
+    }
 `

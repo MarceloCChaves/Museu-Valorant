@@ -22,7 +22,7 @@ export const Box = styled.section`
   border-radius: 8px;
   padding: 70px 0;
 
-  div{
+  div {
     width: 600px;
     max-width: 100%;
 
@@ -36,12 +36,12 @@ export const Box = styled.section`
       padding: 20px 0 20px 10px;
     }
 
-    div{
+    div {
       display: flex;
       align-items: center;
       padding: 0 0 20px 10px;
 
-      .abilities{
+      .abilities {
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
@@ -55,8 +55,8 @@ export const Box = styled.section`
     height: 300px;
   }
 
-  @media(max-width: 767px){
-    .character{
+  @media (max-width: 767px) {
+    .character {
       display: none;
     }
   }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { useParams } from "react-router-dom";
 import { Container, Box } from "./styles";
+import Loading from "../../components/Loading/Index";
 
 type AgentInfo = {
   uuid: string;
@@ -31,10 +32,12 @@ export default function Agent() {
   }, [id]);
 
   if (loading) {
-    return <h1>Loading ...</h1>;
+    return(
+      <Loading />
+    )
   }
   if (agent === null) {
-    return <div>Falha ao carregador</div>;
+    return <div>Falha ao carregar</div>;
   }
   return (
     <Container key={agent.uuid}>
@@ -54,19 +57,19 @@ export default function Agent() {
             <div className="abilities">
               <span>Habilidades</span>
               <details>
-                <summary><img src={agent.abilities[0].displayIcon} alt={agent.displayName} /> {agent.abilities[0].displayName}</summary>
+                <summary><img src={agent.abilities[0].displayIcon} alt={agent.displayName} /> {agent.abilities[0].displayName.charAt(0) + agent.abilities[0].displayName.slice(1).toLowerCase()}</summary>
                 <span>{agent.abilities[0].description}</span>
               </details>
               <details>
-                <summary><img src={agent.abilities[1].displayIcon} alt={agent.displayName} /> {agent.abilities[1].displayName}</summary>
+                <summary><img src={agent.abilities[1].displayIcon} alt={agent.displayName} /> {agent.abilities[1].displayName.charAt(0) + agent.abilities[1].displayName.slice(1).toLowerCase()}</summary>
                 <span>{agent.abilities[1].description}</span>
               </details>
               <details>
-                <summary><img src={agent.abilities[2].displayIcon} alt={agent.displayName} /> {agent.abilities[2].displayName}</summary>
+                <summary><img src={agent.abilities[2].displayIcon} alt={agent.displayName} /> {agent.abilities[2].displayName.charAt(0) + agent.abilities[2].displayName.slice(1).toLowerCase()}</summary>
                 <span>{agent.abilities[2].description}</span>
               </details>
               <details>
-                <summary><img src={agent.abilities[3].displayIcon} alt={agent.displayName} /> {agent.abilities[3].displayName}</summary>
+                <summary><img src={agent.abilities[3].displayIcon} alt={agent.displayName} /> {agent.abilities[3].displayName.charAt(0) + agent.abilities[3].displayName.slice(1).toLowerCase()}</summary>
                 <span>{agent.abilities[3].description}</span>
               </details>
             </div>

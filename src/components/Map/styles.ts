@@ -13,8 +13,24 @@ export const MapContainer = styled.main`
     justify-content: space-around;
     flex-wrap: wrap;
 
-    .nullImage{
-      display: none;
+    .map-details {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      
+      a {
+        margin-top: 50px;
+        text-decoration: none;
+        background: var(--red);
+        color: var(--shape);
+        padding: 15px 40px;
+        border-radius: 8px;
+        transition: .5s linear;
+
+        :hover {
+          filter: brightness(90%);
+        }
+      }
     }
 
     img {

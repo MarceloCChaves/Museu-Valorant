@@ -8,7 +8,6 @@ export const AgentCard = styled.li`
   background: var(--card);
   margin: 20px 30px;
   width: 25%;
-  height: 600px;
   max-width: 100%;
   border-radius: 30px;
 

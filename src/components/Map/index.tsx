@@ -15,15 +15,15 @@ export function Map(props: MapInfo) {
         <p>{props.coordinates}</p>
       </div>
       <div className="maps">
-        <img className={props.displayIcon === null ? 'nullImage' : ''} src={props.displayIcon} alt={props.displayName} loading="lazy" />
-        <div>
+        <img src={props.displayIcon} alt={props.displayName} loading="lazy" />
+        <div className="map-details">
           <img src={props.splash} alt={props.displayName} loading="lazy" />
           <a
             href={`https://valorant.fandom.com/wiki/${props.displayName}`}
             target={"_blank"}
             rel="noreferrer"
           >
-            Ver mais informações
+            Ver mapa
           </a>
         </div>
       </div>

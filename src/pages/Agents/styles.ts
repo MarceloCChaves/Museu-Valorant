@@ -8,4 +8,8 @@ export const Container = styled.div`
     padding: 20px;
     width: 100%;
     max-width: 100%;
+
+    .loading-agents{
+        color: var(--shape);
+    }
 `

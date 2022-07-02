@@ -5,7 +5,7 @@ export function Navbar(){
     return(
         <Nav>
             <div className="logo">
-                <strong><Link to="/">Museu valorant</Link></strong>
+                <strong><Link to="/agents">Museu valorant</Link></strong>
                 <p>Criado com <a href="https://valorant-api.com/" target="_blank" rel="noreferrer">Valorant-api</a></p>
             </div>
             <ul className="navbar-items">
